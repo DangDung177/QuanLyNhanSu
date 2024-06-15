@@ -48,27 +48,6 @@
         </tr>
         </tbody>
     </table>
-    <!-- Pagination links -->
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item" th:classappend="${currentPage == 0} ? disabled">
-                <a class="page-link" th:href="@{/NhanVien/NhanVien?page=0}">First</a>
-            </li>
-            <li class="page-item" th:classappend="${currentPage == 0} ? disabled">
-                <a class="page-link" th:href="@{/NhanVien/NhanVien?page=${currentPage - 1}}">Previous</a>
-            </li>
-            <li class="page-item" th:each="page : ${#numbers.sequence(0, nhanVienPage.totalPages - 1)}"
-                th:classappend="${currentPage == page} ? active">
-                <a class="page-link" th:href="@{/NhanVien/NhanVien?page=${page}}" th:text="${page + 1}"></a>
-            </li>
-            <li class="page-item" th:classappend="${currentPage == nhanVienPage.totalPages - 1} ? disabled">
-                <a class="page-link" th:href="@{/NhanVien/NhanVien?page=${currentPage + 1}}">Next</a>
-            </li>
-            <li class="page-item" th:classappend="${currentPage == nhanVienPage.totalPages - 1} ? disabled">
-                <a class="page-link" th:href="@{/NhanVien/NhanVien?page=${nhanVienPage.totalPages - 1}">Last</a>
-            </li>
-        </ul>
-    </nav>
 </section>
 </body>
 </html>

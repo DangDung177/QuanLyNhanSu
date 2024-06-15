@@ -59,16 +59,10 @@ public class NhanVienController {
         nhanVienService.updateNhanVien(nhanVien);
         return "redirect:/NhanVien";
     }
-    // Handle request to delete a product
+    // Handle request to delete a NhanVien
     @GetMapping("/delete/{id}")
     public String deleteNhanVien(@PathVariable String id) {
         nhanVienService.deleteNhanVienById(id);
         return "redirect:/NhanVien/NhanVien";
-    }
-    // Search for products by name
-    @GetMapping("/search")
-    public String searchProduct(@RequestParam("keyword") String keyword, Model model) {
-        model.addAttribute("NhanVien", nhanVienService.searchNhanVienByTenNV(keyword));
-        return "NhanVien/dsNhanVien";
     }
 }
